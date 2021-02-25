@@ -20,10 +20,12 @@ Enter keys whose value is to be found :<input type='text' name='str1'><br>
 				if(array_key_exists($arr[$x],$arr1))
 				{
 					echo "The value for ".$arr[$x]." is:". $arr1[$arr[$x]]." <br>";
+					echo "hellllllllllllo world." <br>";
 				}
 				else
 				{
-					echo "key ".$arr[$x]." is not applicable. <br>";
+					echo "key ".$arr[$x]." is not valid and not applicable. <br>";
+					echo "helllllllllllo world." <br>";
 				}
 			}
 		}
