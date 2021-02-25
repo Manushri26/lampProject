@@ -23,7 +23,7 @@ Enter keys whose value is to be found :<input type='text' name='str1'><br>
 				}
 				else
 				{
-					echo "key ".$arr[$x]." is not valid. <br>";
+					echo "key ".$arr[$x]." is not valid and not applicable. <br>";
 				}
 			}
 		}
