@@ -309,6 +309,7 @@ height: 50%;
   margin: auto;
   max-width: 1200px;
   padding: 40px 0px;
+  background: #dbd7d2  ;
 }
 
 .content-three-part h1{
@@ -430,12 +431,12 @@ margin-bottom: 20px;
   margin-top: 10px;
 }
 .flip-card-front {
-  background-color: black;
+  background-color: #f4f0ec;
   color: black;
   border-radius: 10%;
 }
 .flip-card-back {
-  background-color: black;
+  background-color: #f4f0ec;
   color: white;
   transform: rotateY(180deg);
   /* width: 100%;*/
