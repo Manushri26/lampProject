@@ -1,176 +1,161 @@
 <!DOCTYPE html>
 <html>
-<head>
-<link rel="stylesheet" href="style.css">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script type="script.js">
-</script>
-<link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<title>Synergy</title>
-
-
 <style>
-    fieldset {
-      background-color: #dbd7d2 ;
-    }
-    legend {
-      background-color: #003153 ;
-      color: white;
-      padding: 5px 10px;
-    }
-    input {
-      margin: 5px;
-    }
-    </style>
-    
-</head>
-<body style="color:black;  background-color:#f4f0ec;">
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
 
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
 
-<!-- navbar -->
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark" style="box-shadow: 3px 3px 3px 3px;" >
-    <a class="navbar-brand" href="#" style="font-family: 'Avenir Next', serif;" >Synergy</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="#about " style="font-family: 'Avenir Next', serif">About<span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link active" href="#academics" style="font-family: 'Avenir Next', serif;">Admission</a>
-        <li class="nav-item dropdown">
-          <a class="nav-link  dropdown-toggle" href="#" style="color:white"data-toggle="dropdown">  Academics </a>
-            <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#"> Curriculum</a></li>
-            <li><a class="dropdown-item" href="AcademicCalender.html"> Acadeimic calender </a></li>
-            
-            </ul>
-        </li>
-        <!--<a class="nav-item nav-link active" href="#admission" style="font-family: 'Avenir Next', serif;">Admissions</a>-->
-        <a class="nav-item nav-link active" href="#alumini" style="font-family: 'Avenir Next', serif;">Alumini</a>
-        <li class="nav-item dropdown">
-          <a class="nav-link  dropdown-toggle" href="#" style="color:white"data-toggle="dropdown">  Profile </a>
-            <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#login"> Student login</a></li>
-            <li><a class="dropdown-item" href="signup.html"> Signup </a></li>
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+ 
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+</style>
+<body>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
+
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>Sign Up</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
       </div>
     </div>
-  </nav>
-  <!-- navbar-end -->
+  </form>
+</div>
 
-  <div class="content-part">
-<form >
-	<center><h1 style="font-family: 'Avenir Next', serif; color:#003153 ;"> REGISTRATION FORM FOR STUDENTS </h1></center>
-	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Date:&emsp;&emsp;<input type="date" min="1990-12-31" max="2020-12-31">
-	<fieldset>
-	<legend><h3> Personal Information </h3></legend>
-	&ensp;First Name: &emsp;&nbsp;
-		<input type="text" ="name" name="Mansi">&emsp;&emsp;&emsp;&emsp;&nbsp;&emsp;&emsp;&emsp;&nbsp;
-		Last Name: &emsp;&nbsp;
-		<input type="text" value="name" name="Mansi">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Your image: &emsp;&emsp;<input type="file" name="pic" id="pic">&emsp;&emsp;&emsp;&emsp;&emsp;
-		<br><br>&ensp;Gender:&nbsp;&emsp;&emsp;&nbsp;
-		<input type="radio" value="female" name="Mansi" checked>female
-		<input type="radio" value="male" name="Mansi">male
-		<input type="radio" value="other" name="Mansi">other<br>
-        <br>&ensp;DOB:&emsp;&emsp;&emsp;&emsp;<input type="date" min="1990-12-31" max="2020-12-31"><br><br>
-	&ensp;Hobbies:&emsp;&emsp;&nbsp;
-		<input type="checkbox" value="Reading" name="Mansi">Reading
-		<input type="checkbox" value="painting" name="Mansi">painting
-		<input type="checkbox" value="Writing" name="Mansi">Writing
-		<input type="checkbox" value="Other" name="Mansi" checked>Other<br>
-		<br>&ensp;Specify:&nbsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;<input type="text" value="hobby" name="Mansi">
-		<br><br>
-	&ensp;Password:&emsp;&emsp;&nbsp;<input type="password"><br><br>
-		</fieldset>
-		<fieldset>
-	<legend><h3> Contact Information </h3></legend>
-	&ensp;Address: &emsp;&emsp;&nbsp;&nbsp;<input type="text" value="abc" name="Mansi">
-		<br><br>
-	&ensp;City:&emsp;&emsp;&emsp;&emsp;
-		<select size="1" multiple>
-			<option> Vadodara </option>
-			<option> Ahemdabad </option>
-			<option> Gandhinagar </option>
-			<option> Surat </option>
-			<option> Rajkot </option>
-		</select><br><br>
-	&ensp;Email:&emsp;&emsp;&emsp;&nbsp;&nbsp;<input type="email"><br><br>
-	&ensp;Contact no:&emsp;&nbsp;&nbsp;<input type="number" min="10000000" max="999999999">
-		</fieldset>	
-	</form>
-	<form>
-	<fieldset>&emsp;
-	<legend><h3> Medical Information </h3></legend>
-	&ensp;Height(cm):&emsp;&nbsp;&nbsp;<input type="number" min="70" max="300"><br><br>
-	&ensp;Weight(kg):&emsp;&nbsp;&nbsp;<input type="number" min="10" max="500"><br><br>
-	&ensp;Blood Type:&emsp;
-		<input list="Blood Group" name="name2">
-			<datalist id="Blood Group">
-				<option> A+</option>
-				<option> B+ </option>
-				<option> O+ </option>
-				<option> AB+ </option>
-				<option> A- </option>
-				<option> B- </option>
-				<option> O- </option>
-				<option> AB- </option>
-			</datalist><br><br>
-            &ensp;Eyesight:&nbsp;&emsp;&emsp;&nbsp;<input type="text"><br><br>
-            &ensp;Eye color: &emsp;&emsp;<input type="color"><br><br>
-            &ensp;Allergies:&emsp;&nbsp;&nbsp;&nbsp;
-		<input type="checkbox" value="Food" name="Mansi">Food
-		<input type="checkbox" value="Medication" name="Mansi">Medication
-		<input type="checkbox" value="Environment" name="Mansi">Environment
-		<input type="checkbox" value="Other" name="Mansi" checked>Other<br><br>
-        &ensp;Details:&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" value="allergic to" name="Mansi">
-		<br><br>&ensp;Is any medication required?&emsp;&emsp;
-		<input type="radio" value="yes" name="Mansi" checked>Yes
-		<input type="radio" value="no" name="Mansi">No
-		<br><br>
-		&ensp;If yes, list any medication taken regularly:<br><br>&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" value="medicine" name="Mansi">
-		<br><br>
-		</fieldset>	
-	</form></div>
-	<center><h1><input type="submit">&emsp;
-		<input type="reset">&emsp;</h1></center>
-    </body>
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
 
-<!-- footer -->
-<footer class="footer-main-div" style="box-shadow:5px 5px 5px 5px;">
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 
-    <div class="footer-social-icons">
-      
-      <ul>
-        <li> <img class="imgcard" src="LOGO1.PNG" alt="Avatar" style="width:90px;height:90px;" ></li>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-        <li><a href="Contact-Us.html" target="blank"> <i class="fa fa-linkedin"> </i></a></li>
-        <li><a href="Contact-Us.html" target="blank"> <i class="fa fa-envelope"> </i></a></li>
-        <li><a href="Contact-Us.html" target="blank"> <i class="fa fa-phone"> </i></a></li>
-      </ul>
-  
-    </div>
-  
-  
-  
-  <div class="footer-bottom">
-  
-    <p>The Synergy is a virtual platform for students to learn, create and think critically.  </p>
-  
-  </div>
-  </footer>
-  <!-- footer -->
-  
-  
-  
-  </body>
-  </html>
-  
+</body>
+</html>
