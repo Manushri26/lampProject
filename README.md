@@ -7,4 +7,4 @@ The sql database can be configured on your system by downloading the faculty_db.
 file and importing it to the local database of your system. 
 We have also provided a video showing the demo for the project.
 
-Happy day to you reader, breath and hustle on! :)
+Happy day to you reader, breathe and hustle on! :)
